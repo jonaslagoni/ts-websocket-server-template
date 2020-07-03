@@ -1,14 +1,14 @@
 
 export default class {{ message.name() }} {
     {%- for propertyName, property in message.payload().properties() %}
-    public {{ propertyName }}?:{{ property.type() }};
+    public {{ propertyName }}?:{{ property.type() | toTsType }};
     {%- endfor %}
     constructor();
     constructor(
         {% set counter = 0 %}
         {%- for propertyName, property in message.payload().properties() %}
         {%- if property.required()%}
-        {{ propertyName }}?:{{ property.type() }}
+        {{ propertyName }}?:{{ property.type() | toTsType }}
         {%- endif %}
         {%- endfor %}
         ) {

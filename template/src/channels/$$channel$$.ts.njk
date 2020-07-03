@@ -24,6 +24,7 @@ export function publish(
 export interface CallbackObject{
     cb: ({{ channel.publish().message(0).name() | firstLowerCase }}:{{ channel.publish().message(0).name()}}) => void
 }
+
 /**
  * {{ channel.subscribe().summary() }}
  * @param {% raw %}{{% endraw %}{{ channel.subscribe().message(0).name() }}{% raw %}}{% endraw %} {{ channel.subscribe().message(0).name() | firstLowerCase}}
