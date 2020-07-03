@@ -1,0 +1,24 @@
+{
+	"name": "{{ asyncapi.info().title() | kebabCase }}",
+	"description": "{{ asyncapi.info().description() | oneLine }}",
+	"version": "{{ asyncapi.info().version() }}",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"scripts": {
+		"watch": "tsc --watch",
+		"build": "tsc",
+		"start": "node src/api/index.js"
+	},
+	"dependencies": {
+		"@types/ws": "^6.0.3",
+		"asyncapi-parser": "0.x",
+		"express": "4.17.1",
+		"express-ws": "4.0.0",
+		"node-yaml-config": "0.0.5",
+		"typescript": "3.4.3",
+		"winston": "3.2.1",
+		"winston-daily-rotate-file": "3.10.0",
+		"uuid": "3.3.3",
+		"@types/uuid": "3.4.5"
+	}
+}
